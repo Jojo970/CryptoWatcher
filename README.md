@@ -1,6 +1,8 @@
 # CryptoTrack
 Crypto Price tracking Web App that utilizes CoinGecko API
 
+![Screenshot][Screen Shot 2022-12-05 at 10.05.17 PM.png]
+
 ## To Do List
 
 1. Improve price tracking to make price updates automatic
