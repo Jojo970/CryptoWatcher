@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Navigation.css'
 
-const Navigation = ({loggedIn, setLoggedIn}) => {
-    const [user, setUser] = useState(null);
+const Navigation = ({loggedIn, setLoggedIn, user, setUser}) => {
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         axios.get('http://localhost:8000/api/current-user', {withCredentials: true}).then(
@@ -17,7 +18,8 @@ const Navigation = ({loggedIn, setLoggedIn}) => {
         axios.post('http://localhost:8000/logout', {}, {withCredentials: true}).then(
             (res) => {
                 setUser(null);
-                setLoggedIn(false)}
+                setLoggedIn(false)
+                navigate('/')}
         ).catch(err => console.log('Error in logging out', err));
     };
 
@@ -25,29 +27,30 @@ const Navigation = ({loggedIn, setLoggedIn}) => {
     return (
         <header>
             <div>
-                <h1>
+                <h1 id='title'>
                     CryptoWatch
                 </h1>
             </div>
             <div className='links'>
-                <NavLink to="/">
-                    Home
-                </NavLink>
-                <NavLink to="/add">
-                    Add Crypto
-                </NavLink>
                 {user? (
                     <div className='loggedIn'>
+                        <NavLink id='clickLink' to="/add">
+                            Add Crypto
+                        </NavLink>
+                        
+                        <NavLink id='clickLink' to= {`/list/:${user.username}`}>
+                            Crypto List
+                        </NavLink>
                         <p id='welcome' >Hello: {user.username}</p>
                         <button id= 'logout' onClick={handleLogout}>Logout</button>
                     </div>
                 ) : (
-                    <div >
-                        <NavLink to = "/login">
+                    <div style={{backgroundColor: "rgba(133, 168, 189, 1)"}}>
+                        <NavLink id='clickLink' to = "/login">
                             Login
                         </NavLink>
-                        <span> / </span>
-                        <NavLink to = "/register">
+                        <span id='clickLink'> / </span>
+                        <NavLink id='clickLink' to = "/register">
                             Register
                         </NavLink>
                     </div>

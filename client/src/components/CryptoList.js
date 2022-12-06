@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import axios from 'axios';
 import io from 'socket.io-client'
 import './CryptoList.css'
 
 const CryptoList = (props) => {
+    const {username} = useParams()
     const [cryptos, setCryptos] = useState([]);
     const [socket] = useState(() => io(':8000'));
     const [count, setCount] = useState(0);
@@ -15,10 +16,10 @@ const CryptoList = (props) => {
         socket.on('connection', ()=> {
             console.log('Connected to socket')
         });
-        axios.get('http://localhost:8000/api/cryptowatcher', {withCredentials: true})
+        axios.get(`http://localhost:8000/api/crypto-by-user/${username}`, {withCredentials: true})
         .then((res) => {
-            console.log(res.data)
-            setCryptos(res.data.CryptoWatchers);            
+            console.log(res, username)
+            setCryptos(res.data.CryptoWatchers);          
         }).catch(err => console.log(err));
 
         return () => socket.disconnect(true);
@@ -78,16 +79,16 @@ const CryptoList = (props) => {
 
 
     return (
-        <>
         <div className = "container">
+            <div id='reloadColumn'>    
+            <p>Click "Reload" to update prices ---></p>
         <button id='reload' onClick={reloadCrypto}>Reload Prices</button>
-
+            </div>
             
             <table>
                 <tr>
                     <th>Crytpo Name</th>
                     <th>Current Price USD</th>
-                    <th>Amount Owned</th>
                     <th>Owned USD</th>
                     <th>Actions</th>
                     
@@ -97,19 +98,16 @@ const CryptoList = (props) => {
                     return(
                         // eslint-disable-next-line react/jsx-key
                         <tr key = {crypto.cryptoName}>
-                            <td>{crypto.cryptoName}</td>
-                            <td>$ {crypto.cryptoPrice.toFixed(2)} </td>
-                            <td>{crypto.cryptoQuantity}</td>
+                            <td>{crypto.cryptoName.charAt(0).toUpperCase() + crypto.cryptoName.slice(1)}</td>
+                            <td>$ {crypto.cryptoPrice} </td>
                             <td>$ {(crypto.cryptoQuantity * crypto.cryptoPrice).toFixed(2)}</td>
-                            <td>{<Link to = {`/edit/${crypto._id}`}>Edit</Link>} | <button id='action' onClick={() => deleteCrypto(crypto._id)}>Delete</button></td>
-                            
+                            <td>{<Link to = {`/edit/${crypto._id}`}>Edit</Link>} | <button id='action' onClick={() => deleteCrypto(crypto._id)}>Delete</button></td>                            
                         </tr>
                     )
                 })}
             </table>
             
         </div>
-        </>
     )
 }
 

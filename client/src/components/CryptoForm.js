@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Form.css'
 
-const CryptoForm = (props) => {
+const CryptoForm = ({user, setUser}) => {
 
     const [cryptoName, setCryptoName] = useState('');
     const [cryptoQuantity, setcryptoQuantity] = useState(0);
@@ -18,8 +18,8 @@ const CryptoForm = (props) => {
             const list = []
             res.data.map((crypto) => list.push(crypto.id))
             setCryptoList(list)
-        }).catch(err => console.log(err, "error in getting cryptos"))
-    }, [])
+        }).catch(err => console.log(err, "error in getting cryptos"));
+    }, []);
 
 
     const onSubmitHandler = (e) => {
@@ -31,9 +31,8 @@ const CryptoForm = (props) => {
         }, {withCredentials: true}).then(res => {
             console.log(res, "response");
             console.log(res.data, "response data")
-            navigate('/')})
-            .catch(err => {
-                setErrors(err.response.data.error.errors);
+            navigate(`/list/:${user.username}`)})
+            .catch((err) => {
                 console.log(err)
             });
 
@@ -41,9 +40,10 @@ const CryptoForm = (props) => {
 
   return (
     <form onSubmit={onSubmitHandler}>
+        <h1 className='stuff'>Crypto Add Form</h1>
         <p>
-            <label>Crypto Name</label>
-            <select value={cryptoName} name = "cryptoName" onChange={(e) => setCryptoName(e.target.value)}>
+            <label className='stuff'>Crypto Name</label>
+            <select className='stuff' value={cryptoName} name = "cryptoName" onChange={(e) => setCryptoName(e.target.value)}>
                 {cryptoList.map((name) => {
                     return(
                         <option>{name}</option>
@@ -52,10 +52,12 @@ const CryptoForm = (props) => {
             </select>
         </p>
         <p>
-            <label>Crypto Amount</label>
-            <input type= 'number' step= '0.00000001' onChange = {(e)=>setcryptoQuantity(parseInt(e.target.value))}/>
+            <label className='stuff'>Crypto Amount</label>
+            <input className='stuff' type= 'number' step= '0.00000001' onChange = {(e)=>setcryptoQuantity(parseInt(e.target.value))}/>
         </p>
+        <p>
         <button>Add Crypto</button>
+        </p>
     </form>
   )
 }
