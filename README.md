@@ -1,7 +1,7 @@
 # CryptoTrack
 Crypto Price tracking Web App that utilizes CoinGecko API
 
-![Screenshot][screenshot.png]
+![Screenshot][https://github.com/Jojo970/CryptoWatcher/blob/main/screenshot.png]
 
 ## To Do List
 
