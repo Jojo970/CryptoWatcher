@@ -82,7 +82,7 @@ const CryptoList = (props) => {
         <div className = "container">
             <div id='reloadColumn'>    
             <p>Click "Reload" to update prices ---></p>
-        <button id='reload' onClick={reloadCrypto}>Reload Prices</button>
+        <button id='reload' onClick={reloadCrypto}>Reload</button>
             </div>
             
             <table>
@@ -101,7 +101,7 @@ const CryptoList = (props) => {
                             <td>{crypto.cryptoName.charAt(0).toUpperCase() + crypto.cryptoName.slice(1)}</td>
                             <td>$ {crypto.cryptoPrice} </td>
                             <td>$ {(crypto.cryptoQuantity * crypto.cryptoPrice).toFixed(2)}</td>
-                            <td>{<Link to = {`/edit/${crypto._id}`}>Edit</Link>} | <button id='action' onClick={() => deleteCrypto(crypto._id)}>Delete</button></td>                            
+                            <td>{<Link className = "edit" to = {`/edit/${crypto._id}`}>Edit</Link>} <button id='action' onClick={() => deleteCrypto(crypto._id)}>Delete</button></td>                            
                         </tr>
                     )
                 })}

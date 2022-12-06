@@ -4,8 +4,8 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom right, rgb(188, 209, 240), rgba(0, 255, 174, 0.46));
-    height: 100em
+    background-image: url("background.png");
+    background-position: center;
 }
 
 .container {
@@ -72,4 +72,20 @@ body {
     height: 2em;
     width: 6em;
     font-size: 0.8em;
+}
+
+table{
+    background-image: linear-gradient(to bottom right, rgb(98, 151, 231), rgba(0, 255, 174, 0.46));
+}
+
+.edit {
+    background-color: black;
+    color: aliceblue;
+    width: 90px;
+    height: 30px;
+    font-size: 1em;
+    border-radius: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

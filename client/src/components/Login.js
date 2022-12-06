@@ -34,11 +34,11 @@ const Login = ({ setLoggedIn, user, setUser }) => {
             <h1 className='stuff'>Login</h1>
             <p>
                 <label className='stuff' htmlFor="email">Email:</label>
-                <input className='stuff' type="email" name="email" value={userSession.email} onChange={handleChange} required />
+                <input className='input' type="email" name="email" value={userSession.email} onChange={handleChange} required />
             </p>
             <p>
                 <label className='stuff' htmlFor="password">Password:</label>
-                <input className='stuff' type="password" name="password" value={userSession.password} onChange={handleChange} required />
+                <input className='input' type="password" name="password" value={userSession.password} onChange={handleChange} required />
             </p>
             <p>
                 <button>Login</button>

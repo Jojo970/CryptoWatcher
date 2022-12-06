@@ -41,11 +41,11 @@ const Navigation = ({loggedIn, setLoggedIn, user, setUser}) => {
                         <NavLink id='clickLink' to= {`/list/:${user.username}`}>
                             Crypto List
                         </NavLink>
-                        <p id='welcome' >Hello: {user.username}</p>
+                        <p id='welcome' ><b>Hello: {user.username}</b></p>
                         <button id= 'logout' onClick={handleLogout}>Logout</button>
                     </div>
                 ) : (
-                    <div style={{backgroundColor: "rgba(133, 168, 189, 1)"}}>
+                    <div>
                         <NavLink id='clickLink' to = "/login">
                             Login
                         </NavLink>

@@ -1,16 +1,26 @@
 import React from 'react'
+import { NavLink, useNavigate } from 'react-router-dom';
 import "./HomePage.css"
 
 const HomePage = () => {
   return (
     <>
     <main id = 'mainpage'>
-            <h1>
+      <div>
+            <h1 id = "homedescribe">
                 Crypto Portfolio Tracking, Built For DeskTop
             </h1>
-            <h3 style={{margin: "50px"}}>
-                Please login or register to access the app.
-            </h3>
+            <p>Please login or register to use.</p>
+      </div>
+            <div>
+                        <NavLink id='clickLink' to = "/login">
+                            <b>Login</b>
+                        </NavLink>
+                        <span id='clickLink'> / </span>
+                        <NavLink id='clickLink' to = "/register">
+                            <b>Register</b>
+                        </NavLink>
+                    </div>
     </main>
     </>
   )

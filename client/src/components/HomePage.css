@@ -7,7 +7,12 @@ main{
 }
 
 main > *{
-    display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0em 2em;
+    font-size: 2em;
+}
+
+main > div {
+    width: 40%;
 }

@@ -45,10 +45,11 @@ const CryptoEdit = ({user}) => {
     }
 
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form id = "edit"onSubmit={onSubmitHandler}>
+        <h1>Edit Crypto</h1>
         <p>
         <label className='stuff'>Crypto Name</label>
-            <select className='stuff' value={cryptoName} name = "cryptoName" onChange={(e) => setCryptoName(e.target.value)}>
+            <select className='input' value={cryptoName} name = "cryptoName" onChange={(e) => setCryptoName(e.target.value)}>
                 {cryptoList.map((name) => {
                     return(
                         <option>{name}</option>
@@ -58,10 +59,10 @@ const CryptoEdit = ({user}) => {
         </p>
         <p>
             <label className='stuff'>Crypto Amount</label>
-            <input className='stuff' type= 'number' step= '0.00000001' value = {cryptoQuantity} onChange = {(e)=>setcryptoQuantity(e.target.value)}/>
+            <input className='input' type= 'number' step= '0.00000001' value = {cryptoQuantity} onChange = {(e)=>setcryptoQuantity(e.target.value)}/>
         </p>
         <p>
-        <button style = {{fontSize: '1.2em'}}>Change the Crytpo</button>
+        <button style = {{fontSize: '1.2em'}}>Edit</button>
         </p>
     </form>
   )

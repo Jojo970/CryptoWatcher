@@ -33,19 +33,19 @@ const Register = ({ setLoggedIn }) => {
             <h1 className='stuff'>Register</h1>
         <p>
             <label className='stuff' htmlFor="username">Username:</label>
-            <input className='stuff'  type="text" name="username" value={user.username} onChange={handleChange} required />
+            <input className='input'  type="text" name="username" value={user.username} onChange={handleChange} required />
         </p>
         <p>
             <label className='stuff' htmlFor="email">Email:</label>
-            <input className='stuff'  type="email" name="email" value={user.email} onChange={handleChange} required />
+            <input className='input'  type="email" name="email" value={user.email} onChange={handleChange} required />
         </p>
         <p>
             <label className='stuff' htmlFor="password">Password:</label>
-            <input className='stuff' type="password" name="password" value={user.password} onChange={handleChange} required />
+            <input className='input' type="password" name="password" value={user.password} onChange={handleChange} required />
         </p>
         <p>
             <label className='stuff' htmlFor="confirmPassword">Confirm Password:</label>
-            <input className='stuff' 
+            <input className='input' 
                 type="password"
                 name="confirmPassword"
                 value={user.confirmPassword}
