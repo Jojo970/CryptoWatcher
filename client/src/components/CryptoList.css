@@ -3,10 +3,6 @@
     padding: 0px;
 }
 
-body {
-    background-image: url("background.png");
-    background-position: center;
-}
 
 .container {
     height: 100vh;

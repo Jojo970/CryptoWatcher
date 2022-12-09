@@ -23,11 +23,15 @@ const Navigation = ({loggedIn, setLoggedIn, user, setUser}) => {
         ).catch(err => console.log('Error in logging out', err));
     };
 
+    const goHome = () => {
+        navigate('/')
+    }
+
 
     return (
         <header>
             <div>
-                <h1 id='title'>
+                <h1 id='title' onClick={goHome}>
                     CryptoWatch
                 </h1>
             </div>
@@ -49,7 +53,7 @@ const Navigation = ({loggedIn, setLoggedIn, user, setUser}) => {
                         <NavLink id='clickLink' to = "/login">
                             Login
                         </NavLink>
-                        <span id='clickLink'> / </span>
+                        <span> / </span>
                         <NavLink id='clickLink' to = "/register">
                             Register
                         </NavLink>

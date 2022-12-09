@@ -9,6 +9,7 @@ const CryptoList = (props) => {
     const [cryptos, setCryptos] = useState([]);
     const [socket] = useState(() => io(':8000'));
     const [count, setCount] = useState(0);
+    const [loaded, setLoaded] = useState(false);
 
 
     
@@ -19,11 +20,17 @@ const CryptoList = (props) => {
         axios.get(`http://localhost:8000/api/crypto-by-user/${username}`, {withCredentials: true})
         .then((res) => {
             console.log(res, username)
-            setCryptos(res.data.CryptoWatchers);          
+            setCryptos(res.data.CryptoWatchers);
+            setLoaded(true);
         }).catch(err => console.log(err));
 
+
         return () => socket.disconnect(true);
+
+        
+
     }, [count]);
+    
 
 
 
@@ -76,12 +83,14 @@ const CryptoList = (props) => {
         setCount(count + 1)
     }
 
+    
+
 
 
     return (
         <div className = "container">
             <div id='reloadColumn'>    
-            <p>Click "Reload" to update prices ---></p>
+            <p>Click "Reload" to update prices</p>
         <button id='reload' onClick={reloadCrypto}>Reload</button>
             </div>
             

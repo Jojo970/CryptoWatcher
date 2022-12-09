@@ -60,10 +60,19 @@ header {
     color: black;
 }
 
-#title {
+#clickLink:hover {
+    color: blueviolet;
+    cursor: pointer;
+}
 
-    
+
+#title {
     position: absolute;
     left: 2%;
     z-index: 1;
+}
+
+#title:hover {
+    color: blueviolet;
+    cursor: pointer;
 }

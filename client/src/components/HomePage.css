@@ -2,17 +2,27 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10%;
-    height: max-content;
+    height: 100vh;
+    color: azure;
 }
+
+
 
 main > *{
     align-items: center;
     justify-content: center;
     margin: 0em 2em;
-    font-size: 2em;
 }
 
 main > div {
     width: 40%;
+}
+
+body {
+    background-image: url('stars.jpg');
+    background-size: contain;
+}
+
+#homedescribe {
+    font-size: 4em;
 }
