@@ -8,7 +8,6 @@ import Navigation from './components/Navigation';
 import Login from './components/Login';
 import Register from './components/Register';
 import HomePage from './components/HomePage';
-import { loadFull } from "tsparticles";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
