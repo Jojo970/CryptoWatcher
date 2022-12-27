@@ -20,6 +20,10 @@ Prices are an average across all exchanges if a crypto is in 2 or more exchanges
 ## To Do List
 
 
-1. Create Amazon EC2 instance of this app - Made
+1. Launch the APP!!
 
-2. Figure out why MongoDB is not working properly.
+  a. Netlify is not deploying the static site... need to figure this out.
+  
+  b. Deploy backend on Heroku.
+  
+  c. Deploy DB on MongoDB Atlas. WIP
