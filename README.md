@@ -1,7 +1,7 @@
 # CryptoTrack
 Crypto Price tracking Web App that utilizes CoinGecko API
 
-Live on 3.83.182.66
+Live [here](3.83.182.66)
 
 However there are some bugs... see To Do List
 
