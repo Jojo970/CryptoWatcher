@@ -20,7 +20,7 @@ Prices are an average across all exchanges if a crypto is in 2 or more exchanges
 ## To Do List
 
 
-1. Launch the APP!!
+1. Launch the APP!! The app currently only works on my local dev server...
 
   a. Netlify is not deploying the static site... need to figure this out.
   
