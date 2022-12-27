@@ -1,12 +1,9 @@
 # CryptoTrack
 Crypto Price tracking Web App that utilizes CoinGecko API
-
-Live [here](3.83.182.66)
-
-However there are some bugs... see To Do List
+Consolidates all cryptocurrencies for easy viewing.
 
 
-# About
+## About
 
 Allows user to access real time database of all cryptos in the world.
 
@@ -15,6 +12,12 @@ User can add different cryptos to their unique profile.
 Helps with tracking across different exchanges... Since not all exchanges list all cryptos.
 
 Prices are an average across all exchanges if a crypto is in 2 or more exchanges.
+
+## Built With
+
+React.js (front end)
+Express.js, Node.js (back end)
+MongoDB (Database)
 
 
 ## To Do List
