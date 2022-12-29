@@ -1,9 +1,9 @@
 # CryptoTrack
 Crypto Price tracking Web App that utilizes CoinGecko API
+Consolidates all cryptocurrencies for easy viewing.
 
-![Screenshot](https://raw.github.com/Jojo970/CryptoWatcher/main/screenshot.png)
 
-# About
+## About
 
 Allows user to access real time database of all cryptos in the world.
 
@@ -13,9 +13,20 @@ Helps with tracking across different exchanges... Since not all exchanges list a
 
 Prices are an average across all exchanges if a crypto is in 2 or more exchanges.
 
+## Built With
+
+React.js (front end)
+Express.js, Node.js (back end)
+MongoDB (Database)
+
 
 ## To Do List
 
 
-3. Create Amazon EC2 instance of this app
+1. Launch the APP!! The app currently only works on my local dev server...
 
+  a. Netlify is not deploying the static site... need to figure this out.
+  
+  b. Deploy backend on Heroku.
+  
+  c. Deploy DB on MongoDB Atlas. WIP
