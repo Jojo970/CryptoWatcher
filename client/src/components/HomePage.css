@@ -3,7 +3,7 @@ main{
     align-items: center;
     justify-content: center;
     height: 100vh;
-    color: azure;
+    color: rgb(19, 50, 50);
 }
 
 
@@ -19,8 +19,12 @@ main > div {
 }
 
 body {
-    background-image: url('stars.jpg');
-    background-size: contain;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(157, 0, 255, 0.345),
+        rgba(0, 0, 255, 0.355)
+    ),url('background.png');
+    background-size: auto;
 }
 
 #homedescribe {
