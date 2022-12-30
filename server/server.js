@@ -6,7 +6,7 @@ const express = require('express');
 const cors = require('cors');
 const socket = require('socket.io');
 const app = express();
-const port = process.env.PORT || 8000;
+const port =  8000;
 const Crypto = require('./model/mongoose.models')
 const cookieParser = require('cookie-parser');
 
