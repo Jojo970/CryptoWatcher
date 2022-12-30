@@ -15,7 +15,7 @@ const Navigation = ({loggedIn, setLoggedIn, user, setUser}) => {
     }, [loggedIn]);
 
     const handleLogout = () => {
-        axios.post('http://localhost:8000/logout', {}, {withCredentials: true}).then(
+        axios.post('http://localhost:8000/api/logout', {}, {withCredentials: true}).then(
             (res) => {
                 setUser(null);
                 setLoggedIn(false)
