@@ -18,7 +18,7 @@ const Login = ({ setLoggedIn, user, setUser }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-        .post('http://localhost:8000/login', userSession, { withCredentials: true })
+        .post('http://localhost:8000/api/login', userSession, { withCredentials: true })
         .then((res) => {
             console.log(res.data);
             setLoggedIn(true);
